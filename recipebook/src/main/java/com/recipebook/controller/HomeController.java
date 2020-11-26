@@ -1,4 +1,4 @@
-package com.yerin.recipebook;
+package com.recipebook.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
