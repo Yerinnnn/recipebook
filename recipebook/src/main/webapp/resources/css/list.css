@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Karma", sans-serif
+}
+
+a {
+	text-decoration: none;
+}
+
+nav {
+	-ms-overflow-style: none;
+}
+
+nav::-webkit-scrollbar {
+	display: none;
+}
+
+/* #home {
+        font-weight: 800;
+    } */
+.w3-bar-block .w3-bar-item {
+	padding: 20px
+}
+
+.w3-button {
+	transition-duration: 0.4s;
+}
+
+.search-container {
+	width: 100%;
+	height: 70px;
+	padding: 5px;
+}
+
+.search-container input#search {
+	width: 200px;
+	height: 30px;
+	padding: 10px;
+	margin-top: 12px;
+	vertical-align: middle;
+	font-size: 14px;
+	float: left;
+}
+
+#hamburger-icon {
+	background: none;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+#hamburger-icon:hover {
+	color: darkgrey;
+	transition-duration: 0.4s;
+}
+
+#search-icon {
+	float: left;
+	margin: 10px;
+}
+
+#close-icon {
+	float: right;
+	margin: 10px;
+	width: 30px;
+}
+
+.hide-menu {
+	font-size: 20px;
+	display: block;
+	padding: 15px
+}
+
+.hide-menu:hover {
+	color: darkgrey;
+	transition-duration: 0.4s;
+}
+
+.more-button {
+	float: right;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.side-menu {
+	margin-top: 70px;
+	margin-left: 40px;
+	width: 200px;
+	height: 500px;
+	float: left;
+}
+
+.side-menu a {
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.side-menu a:hover {
+	background-color: #ccc;
+}
+
+.side-menu a.active {
+	background-color: #000000;
+	color: white;
+}
+
+.category {
+	margin-left: 40px;
+	margin-top: 150px;
+	font-size: 50px;
+}
+
+.title {
+	margin-top: 10px;
+	font-size: 23px;
+}
+
+.sub_title {
+	margin-top: 5px;
+	font-size: 18px;
+}
+
+.foodname {
+	margin-top: 5px;
+	display: inline;
+	float: left;
+}
+
+.cooking_time {
+	display: inline;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.username {
+	margin-top: 5px;
+	display: inline;
+	float: right;
+}
+
+@media screen and (max-width: 600px) {
+	.side-menu {
+		display: none;
+	}
+	.side-menu a {
+		background-color: #eee;
+		color: black;
+		display: block;
+		padding: 12px;
+		text-decoration: none;
+	}
+	.side-menu a:hover {
+		background-color: #ccc;
+	}
+	.side-menu a.active {
+		background-color: #000000;
+		color: white;
+	}
+	.category {
+		margin-left: 30px;
+		margin-top: 70px;
+		font-size: 20px;
+	}
+}
