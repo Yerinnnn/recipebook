@@ -22,7 +22,7 @@ public class RecipeController {
 	@Inject
 	private RecipeService service;
 	
-	@RequestMapping(value = "/recipebook/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void getList(Model model) throws Exception {
 		
 		List<RecipeVO> list = null;

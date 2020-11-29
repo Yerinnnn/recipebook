@@ -196,7 +196,7 @@ nav::-webkit-scrollbar {
 		<!-- search -->
 		<div class="search-container">
 			<a href="javascript:void(0)" onclick="w3_close()"><img
-				id="close-icon" src="img/btn_back.png"></a>
+				id="close-icon" src="resources/img/btn_back.png"></a>
 			<sapn>
 			<form action="/action_page.php">
 				<span id="search-icon"><i class="fa fa-search"></i></span> <input

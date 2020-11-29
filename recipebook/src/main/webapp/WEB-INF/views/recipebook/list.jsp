@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -272,6 +273,7 @@ nav::-webkit-scrollbar {
 	<!-- <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px"> -->
 
 
+
 	<div class="w3-main w3-content w3-padding"
 		style="max-width: 1200px; margin-top: 100px">
 
@@ -281,58 +283,22 @@ nav::-webkit-scrollbar {
 			<c:forEach items="${list}" var="list">
 				<tr>
 					<div class="w3-quarter">
-						<img class="thumbImg" src="/resources/img/1.jpg" alt="Sandwich" style="width: 100%">
+						<img class="thumbImg" src="/resources/img/1.jpg" alt="Sandwich"
+							style="width: 100%">
 
-					<!--	<div class="title">${list.title}</div> -->
+						<div class="title">${list.title}</div>
 						<div class="sub_title">${list.sub_title}</div>
 						<div>
-							<div class="foodname">${list.foodname}</div>
+							<div class="foodname">${list.food_name}</div>
 							<div class="cooking_time">${list.time}</div>
 							<div class="username">by ${list.username}</div>
 						</div>
 					</div>
 				</tr>
 			</c:forEach>
-
-
-			<!--
-		<c:forEach items="${list}" var="list">
-			<tr>
-				<td>${list.recipe_id}</td>
-				<td>${list.title}</td>
-				<td>${list.sub_title}</td>
-				<td>${list.food_name}</td>
-				<td>${list.username}</td>
-				<td>${list.date}</td>
-				<td>${list.ingredient}</td>
-				<td>${list.time}</td>
-				<td>${list.content}</td>
-				<td>${list.hits}</td>
-				<td>${list.thumbImg}</td>
-			</tr>
-		</c:forEach>-->
-
-
-			<div class="w3-quarter">
-				<img src="/resources/img/2.jpg" alt="Steak" style="width: 100%">
-				<h3>Let Me Tell You About This Steak</h3>
-				<p>Once again, some random text to lorem lorem lorem lorem ipsum
-					text praesent tincidunt ipsum lipsum.</p>
-			</div>
-			<div class="w3-quarter">
-				<img src="/resources/img/3.jpg" alt="Cherries" style="width: 100%">
-				<h3>Cherries, interrupted</h3>
-				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-				<p>What else?</p>
-			</div>
-			<div class="w3-quarter">
-				<img src="/resources/img/4.jpg" alt="Pasta and Wine"
-					style="width: 100%">
-				<h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-			</div>
 		</div>
 	</div>
+
 
 
 	<!-- Pagination -->
