@@ -256,7 +256,7 @@ nav::-webkit-scrollbar {
 			</div>
 
 				<div class="w3-right w3-padding-16" style="margin-right: 10px;">
-					<a href="/recipebook/login">sign in</a>
+					<a href="login">sign in</a>
 				</div>
 			
 			<div id="home" class="w3-center w3-padding-16">

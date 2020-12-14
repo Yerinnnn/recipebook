@@ -3,24 +3,81 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.recipebook.mappers.recipe">
+	<!-- 회원가입 -->
+	<insert id="register">
+		INSERT INTO user(
+		username,
+		password,
+		email,
+		gender,
+		age,
+		img,
+		signature
+		)
+		VALUES(
+		#{username},
+		#{password},
+		#{email},
+		#{gender},
+		#{age},
+		#{img},
+		#{signature}
+		)
+	</insert>
+
+
+	<!-- 로그인 -->
+	<select id="login" resultType="com.recipebook.domain.MemberVO">
+		SELECT
+		user_id,
+		username,
+		password
+		FROM
+		user
+		WHERE
+		username = #{username}
+		AND password = #{password}
+
+	</select>
 
 	<!-- 게시물 목록 -->
-	<select id="list" parameterType="list"
-		resultType="com.recipebook.domain.RecipeVO">
+	<select id="list" resultType="com.recipebook.domain.RecipeVO">
 		SELECT
-		    recipe_id, 
-		    title, 
-		    sub_title, 
-		    food_name, 
-		    username, 
-		    date, 
-		    time,
-            content, 
-            hits,
-		    thumbImg
+		recipe_id,
+		title,
+		sub_title,
+		food_name,
+		username,
+		date,
+		time,
+		content,
+		hits,
+		thumbImg
 		FROM recipe
 
 	</select>
 
+	<insert id="write"
+		parameterType="com.recipebook.domain.RecipeVO">
+		INSERT INTO
+		recipe(
+		title,
+		sub_title,
+		food_name,
+		time,
+		content,
+		hits,
+		thumbImg
+		)
+		VALUES (
+		#{title},
+		#{sub_title},
+		#{food_name},
+		#{time},
+		#{content},
+		#{hits},
+		#{thumbImg}
+		)
+	</insert>
 
 </mapper>

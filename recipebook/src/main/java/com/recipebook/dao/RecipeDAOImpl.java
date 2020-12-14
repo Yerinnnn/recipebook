@@ -16,10 +16,17 @@ public class RecipeDAOImpl implements RecipeDAO {
 	private SqlSession sql;
 
 	private static String namespace = "com.recipebook.mappers.recipe";
+	
 
 	@Override
 	public List<RecipeVO> list() throws Exception {
 		return sql.selectList(namespace + ".list");
+	}
+
+	@Override
+	public void write(RecipeVO vo) throws Exception {
+		sql.insert(namespace + ".write", vo);
+		
 	}
 
 }

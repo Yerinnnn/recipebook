@@ -4,25 +4,6 @@ import java.util.Date;
 
 public class RecipeVO {
 
-//	CREATE TABLE recipe (
-//			recipe_id INT(11) NOT NULL AUTO_INCREMENT,
-//			title VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-//			food_name VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-//			username VARCHAR(30) NOT NULL COLLATE 'utf8_general_ci',
-//			date DATETIME NULL DEFAULT current_timestamp(),
-//			ingredient INT(11) NOT NULL,
-//			time INT(11) NOT NULL,
-//			content TEXT(65535) NOT NULL COLLATE 'utf8_general_ci',
-//			hits INT(11) NOT NULL,
-//			thumbImg(200),
-//			PRIMARY KEY (recipe_id) USING BTREE,
-//			INDEX username (username) USING BTREE,
-//			CONSTRAINT username FOREIGN KEY (username) REFERENCES recipebook.user (username) ON UPDATE CASCADE ON DELETE RESTRICT
-//		)
-//		COLLATE='utf8_general_ci'
-//		ENGINE=InnoDB
-//		;
-
 	private int recipe_id;
 	private String title;
 	private String sub_title;
