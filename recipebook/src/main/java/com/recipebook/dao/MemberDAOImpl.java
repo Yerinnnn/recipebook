@@ -1,7 +1,5 @@
 package com.recipebook.dao;
 
-import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,12 +16,12 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public void register(MemberVO vo) throws Exception {
+		sql.insert(namespace + ".register", vo);
 	}
 
 	@Override
 	public MemberVO login(MemberVO vo) throws Exception {
 		return sql.selectOne(namespace + ".login", vo);
-
 	}
 
 }

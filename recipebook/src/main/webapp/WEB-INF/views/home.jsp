@@ -205,7 +205,7 @@ nav::-webkit-scrollbar {
 			</sapn>
 		</div>
 		<!-- rice menu -->
-		<a href="/recipebook/list" onclick="openMenu('rice-menu')"
+		<a href="/recipebook/list?num=1" onclick="openMenu('rice-menu')"
 			class="w3-bar-item w3-button">밥 요리</a>
 		<div id="rice-menu" class="w3-container w3-hide">
 			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a>

@@ -126,19 +126,35 @@ span.psw {
 	<div id="id01" class="modal">
 
 		<form class="modal-content animate" method="post" name='loginForm' action="/recipebook/login">
-			<div id="home" class="w3-center w3-padding-16"><a href="home" style="text-decoration: none;">Recipe Book</a></div>
+			<div id="home" class="w3-center w3-padding-16">
+				<a href="home" style="text-decoration: none;">Recipe Book</a>
+			</div>
 
 			<div class="imgcontainer">Sign In</div>
 
 
+			<div class="container">
+				<input type="text" placeholder="Username" name="uname" required>
+				<input type="password" placeholder="Password" name="psw" required>
+				<button type="submit">Sign in</button>
+				<label>
+					<input type="checkbox" checked="checked" name="remember">
+					Remember me
+				</label>
+			</div>
 
-			<div class="container"><input type="text" placeholder="Username" name="uname" required> <input type="password" placeholder="Password" name="psw" required>
-				<button type="submit">Sign in</button> <label> <input type="checkbox" checked="checked" name="remember"> Remember me
-			</label></div>
+			<div class="container" style="background-color: #f1f1f1">
+				<span class="psw" style="float: left;">
+					<a href="register">sign up</a>
+				</span>
+				<span class="psw">
+					Forgot <a href="#">password?</a>
+				</span>
+			</div>
 
-			<div class="container" style="background-color: #f1f1f1"><span class="psw" style="float: left;"> <a href="register">sign up</a>
-			</span> <span class="psw"> Forgot <a href="#">password?</a>
-			</span></div>
+			<c:if test="${msg == false}">
+				<p style="color: #f00;">로그인에 실패했습니다.</p>
+			</c:if>
 		</form>
 	</div>
 

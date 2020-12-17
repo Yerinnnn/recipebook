@@ -10,6 +10,7 @@ public class RecipeVO {
 	private String food_name;
 	private String username;
 	private Date date;
+	private int amount;
 	private int time;
 	private String content;
 	private int hits;
@@ -50,6 +51,12 @@ public class RecipeVO {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 	public int getTime() {
 		return time;

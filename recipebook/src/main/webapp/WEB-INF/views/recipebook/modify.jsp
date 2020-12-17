@@ -228,7 +228,7 @@ td {
 						<div>제목</div>
 					</td>
 					<td>
-						<div><input type="text" name="title" id="title" placeholder="제목" required></div> <!-- <div class="input-error">
+						<div><input type="text" name="title" id="title" value="${read.title}" required></div> <!-- <div class="input-error">
                             <p class="text-danger">제목은 필수 입력사항입니다.</p>
                         </div> -->
 					</td>
@@ -238,7 +238,7 @@ td {
 						<td class="label">한 줄 설명</td>
 					</div>
 					<td>
-						<div><input type="text" name="sub_title" id="sub_title" placeholder="한 줄 설명" required></div>
+						<div><input type="text" name="sub_title" id="sub_title" value="${read.sub_title}" required></div>
 					</td>
 				</tr>
 				<tr>
@@ -246,17 +246,17 @@ td {
 						<td class="label">레시피 정보</td>
 					</div>
 					<td><label for="" class="food-info">음식 이름</label>
-						<div><input type="text" name="food_name" id="foodname" placeholder="음식 이름" style="margin-top: 0px;" required></div></td>
+						<div><input type="text" name="food_name" id="foodname" value="${read.food_name}" style="margin-top: 0px;" required></div></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td><label for="" class="food-info">조리량</label>
-						<div><input type="text" name="amount" style="display: inline; width: 40%; margin-top: 0px;" placeholder="조리분량" required> 인분</div></td>
+						<div><input type="text" name="amount" style="display: inline; width: 40%; margin-top: 0px;" value="${read.amount}" required> 인분</div></td>
 				</tr>
 				<tr>
 					<td class="label"></td>
 					<td>
-						<div><label for="" class="food-info">조리 시간</label></div> 총 <input type="text" placeholder="조리시간" name="time" value="" style="width: 70%; margin: 0 6px;" required /> 분 소요
+						<div><label for="" class="food-info">조리 시간</label></div> 총 <input type="text" value="${read.time}" name="time" value="" style="width: 70%; margin: 0 6px;" required /> 분 소요
 					</td>
 				</tr>
 				<tr>
@@ -298,7 +298,7 @@ td {
 					<td><input class="recipe[hashtag]" type="text" name="hashtag" id="hashtag" placeholder="해시태그"></td>
 				</tr>
 			</table>
-			<button type="submit">작성 완료</button>
+			<button type="submit"><a href="/recipebook/modify?bno=${read.recipe_id}">작성 완료</a></button>
 		</form>
 	</div>
 

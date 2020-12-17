@@ -282,18 +282,22 @@ nav::-webkit-scrollbar {
 		</div>
 	</div>
 
+
+
 	<!-- Pagination -->
 	<div class="pagination w3-center w3-padding-32">
 		<div class="w3-bar">
 
-			<a href="/recipebook/list?num=${startPageNum - 1}" class="w3-bar-item">«</a>
+			<c:if test="${prev}">
+				<a href="/recipebook/list?num=${startPageNum - 1}" class="w3-bar-item">«</a>
+			</c:if>
 
 			<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
 				<c:if test="${select != num}">
-					<a href="/recipebook/list?num=${num}" class="w3-bar-item w3-button w3-hover-black">${num}</a>
+					<a href="/recipebook/listPage?num=${num}" class="w3-bar-item w3-button w3-hover-black">${num}</a>
 				</c:if>
 				<c:if test="${select == num}">
-					<a href="/recipebook/list?num=${num}" class="w3-bar-item w3-black w3-button">${num}</a>
+					<a href="/recipebook/listPage?num=${num}" class="w3-bar-item w3-black w3-button">${num}</a>
 				</c:if>
 			</c:forEach>
 
@@ -303,6 +307,7 @@ nav::-webkit-scrollbar {
 			</c:if>
 		</div>
 	</div>
+	
 
 	<hr id="about">
 

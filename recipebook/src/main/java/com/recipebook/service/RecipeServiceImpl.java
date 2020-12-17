@@ -23,8 +23,34 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
+	public List<RecipeVO> listPage(int displayPost, int postNum) throws Exception {
+		return dao.listPage(displayPost, postNum);
+	}
+
+	@Override
+	public int count() throws Exception {
+		return dao.count();
+	} 
+
+	@Override
 	public void write(RecipeVO vo) throws Exception {
 		dao.write(vo);
+	}
+
+	@Override
+	public RecipeVO read(int recipe_id) throws Exception {
+		return dao.read(recipe_id);
+	}
+
+	@Override
+	public void modify(RecipeVO vo) throws Exception {
+		dao.modify(vo);
+	}
+
+	@Override
+	public void delete(int recipe_id) throws Exception {
+		dao.delete(recipe_id);
+		
 	}
 
 }

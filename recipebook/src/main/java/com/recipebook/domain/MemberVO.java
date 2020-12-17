@@ -8,7 +8,6 @@ public class MemberVO {
 	private String username;
 	private String password;
 	private String email;
-	private int gender;
 	private int age;
 	private String img;
 	private String signature;
@@ -44,14 +43,6 @@ public class MemberVO {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public int getGender() {
-		return gender;
-	}
-
-	public void setGender(int gender) {
-		this.gender = gender;
 	}
 
 	public int getAge() {

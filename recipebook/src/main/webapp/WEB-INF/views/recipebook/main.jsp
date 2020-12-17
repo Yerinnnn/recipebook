@@ -1,7 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 <title>Home</title>
@@ -62,10 +60,8 @@
     도시어부,떡볶이 만드는 법,피자 레시피,김밥 레시피,라면 레시피,미역국 레시피,스테이크 레시피,쌀국수 레시피,
     냉면 레시피">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Karma">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="/recipe.js"></script>
 <style>
 body, h1, h2, h3, h4, h5, h6 {
@@ -189,76 +185,68 @@ nav::-webkit-scrollbar {
 </head>
 <body>
 	<!-- Hamburger Menu -->
-	<nav
-		class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
-		style="display: none; z-index: 2; width: 40%; min-width: 300px"
-		id="mySidebar">
+	<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display: none; z-index: 2; width: 40%; min-width: 300px" id="mySidebar">
 		<!-- search -->
 		<div class="search-container">
-			<a href="javascript:void(0)" onclick="w3_close()"><img
-				id="close-icon" src="resources/img/btn_back.png"></a>
+			<a href="javascript:void(0)" onclick="w3_close()"><img id="close-icon" src="resources/img/btn_back.png"></a>
 			<sapn>
 			<form action="/action_page.php">
-				<span id="search-icon"><i class="fa fa-search"></i></span> <input
-					id="search" type="text" placeholder="Search.." name="search">
+				<span id="search-icon">
+					<i class="fa fa-search"></i>
+				</span>
+				<input id="search" type="text" placeholder="Search.." name="search">
 			</form>
 			</sapn>
 		</div>
 		<!-- rice menu -->
-		<a href="/recipebook/list" onclick="openMenu('rice-menu')"
-			class="w3-bar-item w3-button">밥 요리</a>
+		<a href="/recipebook/list" onclick="openMenu('rice-menu')" class="w3-bar-item w3-button">밥 요리</a>
 		<div id="rice-menu" class="w3-container w3-hide">
-			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a>
-			<a href="" class="hide-menu">나물밥</a> <a href="" class="hide-menu">죽</a>
+			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a> <a href="" class="hide-menu">나물밥</a> <a href="" class="hide-menu">죽</a>
 		</div>
 		<!-- noodle menu -->
-		<a href="#about" onclick="openMenu('noodle-menu')"
-			class="w3-bar-item w3-button">국수 요리</a>
+		<a href="#about" onclick="openMenu('noodle-menu')" class="w3-bar-item w3-button">국수 요리</a>
 		<div id="noodle-menu" class="w3-container w3-hide">
-			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a>
-			<a href="" class="hide-menu">나물밥</a>
+			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a> <a href="" class="hide-menu">나물밥</a>
 		</div>
 		<!-- soup menu -->
-		<a href="#about" onclick="openMenu('soup-menu')"
-			class="w3-bar-item w3-button">국물 요리</a>
+		<a href="#about" onclick="openMenu('soup-menu')" class="w3-bar-item w3-button">국물 요리</a>
 		<div id="soup-menu" class="w3-container w3-hide">
 			<a href="" class="hide-menu">국/탕/스프</a>
 		</div>
 		<!-- steamed/boiled/roasted  menu -->
-		<a href="#about" onclick="openMenu('steamed-menu')"
-			class="w3-bar-item w3-button">찜/조림/구이 요리</a>
+		<a href="#about" onclick="openMenu('steamed-menu')" class="w3-bar-item w3-button">찜/조림/구이 요리</a>
 		<div id="steamed-menu" class="w3-container w3-hide">
-			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a>
-			<a href="" class="hide-menu">나물밥</a>
+			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a> <a href="" class="hide-menu">나물밥</a>
 		</div>
 		<!-- fried menu -->
-		<a href="#about" onclick="openMenu('fried-menu')"
-			class="w3-bar-item w3-button">볶음/튀김/부침 요리</a>
+		<a href="#about" onclick="openMenu('fried-menu')" class="w3-bar-item w3-button">볶음/튀김/부침 요리</a>
 		<div id="fried-menu" class="w3-container w3-hide">
-			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a>
-			<a href="" class="hide-menu">나물밥</a>
+			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a> <a href="" class="hide-menu">나물밥</a>
 		</div>
 		<!-- dessert menu -->
-		<a href="#about" onclick="openMenu('dessert-menu')"
-			class="w3-bar-item w3-button">홈카페(디저트, 베이킹 요리)</a>
+		<a href="#about" onclick="openMenu('dessert-menu')" class="w3-bar-item w3-button">홈카페(디저트, 베이킹 요리)</a>
 		<div id="dessert-menu" class="w3-container w3-hide">
-			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a>
-			<a href="" class="hide-menu">나물밥</a>
+			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a> <a href="" class="hide-menu">나물밥</a>
 		</div>
 	</nav>
 
 	<!-- Top menu -->
 	<div class="w3-top">
-		<div class="w3-white w3-xlarge"
-			style="max-width: 1200px; margin: auto">
+		<div class="w3-white w3-xlarge" style="max-width: 1200px; margin: auto">
 			<div class="w3-padding-16 w3-left">
 				<button id="hamburger-icon" onclick="w3_open()">☰</button>
 			</div>
 
-				<div class="w3-right w3-padding-16" style="margin-right: 10px;">
+			<div class="w3-right w3-padding-16" style="margin-right: 10px;">
+				<c:if test="${member == null}">
 					<a href="login">sign in</a>
-				</div>
-			
+				</c:if>
+				<c:if test="${member != null}">
+					<a href="profile">my page</a>
+					<a href="profile">sign out</a>
+				</c:if>
+			</div>
+
 			<div id="home" class="w3-center w3-padding-16">
 				<a href="">Recipe Book</a>
 			</div>
@@ -266,13 +254,15 @@ nav::-webkit-scrollbar {
 	</div>
 
 	<!-- !PAGE CONTENT! -->
-	<div class="w3-main w3-content w3-padding"
-		style="max-width: 1200px; margin-top: 100px">
+	<div class="w3-main w3-content w3-padding" style="max-width: 1200px; margin-top: 100px">
 
 		<div>
 			<span>
 				<h1 style="display: inline;">TOP 50 Best Menu</h1>
-			</span> <span class="more-button"><a href="/list.html">> 더보기</a></span>
+			</span>
+			<span class="more-button">
+				<a href="/list.html">> 더보기</a>
+			</span>
 		</div>
 
 		<!-- First Photo Grid-->
@@ -280,15 +270,12 @@ nav::-webkit-scrollbar {
 			<div class="w3-quarter">
 				<img src="/resources/img/1.jpg" alt="Sandwich" style="width: 100%">
 				<h3>The Perfect Sandwich, A Real NYC Classic</h3>
-				<p>Just some random text, lorem ipsum text praesent tincidunt
-					ipsum lipsum.</p>
+				<p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
-				<a href="/read.html"><img src="/resources/img/2.jpg" alt="Steak"
-					style="width: 100%"></a>
+				<a href="/read.html"><img src="/resources/img/2.jpg" alt="Steak" style="width: 100%"></a>
 				<h3>Let Me Tell You About This Steak</h3>
-				<p>Once again, some random text to lorem lorem lorem lorem ipsum
-					text praesent tincidunt ipsum lipsum.</p>
+				<p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/3.jpg" alt="Cherries" style="width: 100%">
@@ -297,8 +284,7 @@ nav::-webkit-scrollbar {
 				<p>What else?</p>
 			</div>
 			<div class="w3-quarter">
-				<img src="/resources/img/4.jpg" alt="Pasta and Wine"
-					style="width: 100%">
+				<img src="/resources/img/4.jpg" alt="Pasta and Wine" style="width: 100%">
 				<h3>Once Again, Robust Wine and Vegetable Pasta</h3>
 				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
@@ -314,27 +300,27 @@ nav::-webkit-scrollbar {
 			<div class="w3-quarter">
 				<img src="/resources/img/6.jpg" alt="Salmon" style="width: 100%">
 				<h3>Salmon For Your Skin</h3>
-				<p>Once again, some random text to lorem lorem lorem lorem ipsum
-					text praesent tincidunt ipsum lipsum.</p>
+				<p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/7.jpg" alt="Sandwich" style="width: 100%">
 				<h3>The Perfect Sandwich, A Real Classic</h3>
-				<p>Just some random text, lorem ipsum text praesent tincidunt
-					ipsum lipsum.</p>
+				<p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/8.jpg" alt="Croissant" style="width: 100%">
 				<h3>Le French</h3>
-				<p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum
-					lipsum.</p>
+				<p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 		</div>
 
 		<div style="margin-top: 50px;">
 			<span>
 				<h1 style="display: inline;">오늘 날씨엔</h1>
-			</span> <span class="more-button"><a>> 더보기</a></span>
+			</span>
+			<span class="more-button">
+				<a>> 더보기</a>
+			</span>
 		</div>
 
 		<!-- First Photo Grid-->
@@ -342,14 +328,12 @@ nav::-webkit-scrollbar {
 			<div class="w3-quarter">
 				<img src="/resources/img/9.jpg" alt="Sandwich" style="width: 100%">
 				<h3>The Perfect Sandwich, A Real NYC Classic</h3>
-				<p>Just some random text, lorem ipsum text praesent tincidunt
-					ipsum lipsum.</p>
+				<p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/10.jpg" alt="Steak" style="width: 100%">
 				<h3>Let Me Tell You About This Steak</h3>
-				<p>Once again, some random text to lorem lorem lorem lorem ipsum
-					text praesent tincidunt ipsum lipsum.</p>
+				<p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/11.jpg" alt="Cherries" style="width: 100%">
@@ -358,8 +342,7 @@ nav::-webkit-scrollbar {
 				<p>What else?</p>
 			</div>
 			<div class="w3-quarter">
-				<img src="/resources/img/12.jpg" alt="Pasta and Wine"
-					style="width: 100%">
+				<img src="/resources/img/12.jpg" alt="Pasta and Wine" style="width: 100%">
 				<h3>Once Again, Robust Wine and Vegetable Pasta</h3>
 				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
@@ -368,7 +351,10 @@ nav::-webkit-scrollbar {
 		<div style="margin-top: 50px;">
 			<span>
 				<h1 style="display: inline;">20대, 여성</h1>
-			</span> <span class="more-button"><a>> 더보기</a></span>
+			</span>
+			<span class="more-button">
+				<a>> 더보기</a>
+			</span>
 		</div>
 
 		<!-- Second Photo Grid-->
@@ -381,20 +367,17 @@ nav::-webkit-scrollbar {
 			<div class="w3-quarter">
 				<img src="/resources/img/14.jpg" alt="Salmon" style="width: 100%">
 				<h3>Salmon For Your Skin</h3>
-				<p>Once again, some random text to lorem lorem lorem lorem ipsum
-					text praesent tincidunt ipsum lipsum.</p>
+				<p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/15.jpg" alt="Sandwich" style="width: 100%">
 				<h3>The Perfect Sandwich, A Real Classic</h3>
-				<p>Just some random text, lorem ipsum text praesent tincidunt
-					ipsum lipsum.</p>
+				<p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<img src="/resources/img/8.jpg" alt="Croissant" style="width: 100%">
 				<h3>Le French</h3>
-				<p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum
-					lipsum.</p>
+				<p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 		</div>
 	</div>
@@ -422,35 +405,26 @@ nav::-webkit-scrollbar {
 	<footer class="w3-row-padding w3-padding-32">
 		<div class="w3-third">
 			<h3>FOOTER</h3>
-			<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
-				condimentum, porta lectus vitae, ultricies congue gravida diam non
-				fringilla.</p>
+			<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 			<p>
-				Powered by <a href="https://www.w3schools.com/w3css/default.asp"
-					target="_blank">w3.css</a>
+				Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
 			</p>
 		</div>
 
 		<div class="w3-third">
 			<h3>BLOG POSTS</h3>
 			<ul class="w3-ul w3-hoverable">
-				<li class="w3-padding-16"><img src="/w3images/workshop.jpg"
-					class="w3-left w3-margin-right" style="width: 50px"> <span
-					class="w3-large">Lorem</span><br> <span>Sed mattis nunc</span>
-				</li>
-				<li class="w3-padding-16"><img src="/w3images/gondol.jpg"
-					class="w3-left w3-margin-right" style="width: 50px"> <span
-					class="w3-large">Ipsum</span><br> <span>Praes tinci sed</span>
-				</li>
+				<li class="w3-padding-16"><img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width: 50px"> <span class="w3-large">Lorem</span><br> <span>Sed mattis nunc</span></li>
+				<li class="w3-padding-16"><img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width: 50px"> <span class="w3-large">Ipsum</span><br> <span>Praes tinci sed</span></li>
 			</ul>
 		</div>
 
 		<div class="w3-third w3-serif">
 			<h3>POPULAR TAGS</h3>
 			<p>
-				<span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span
-					class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New
-					York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+				<span class="w3-tag w3-black w3-margin-bottom">Travel</span>
+				<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span>
+				<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
 				<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span>
 				<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span>
 				<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>

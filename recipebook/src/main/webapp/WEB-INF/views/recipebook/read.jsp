@@ -1,16 +1,16 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--   <link rel="stylesheet" href="<c:url value="/resources/css/list.css" />">  -->
-<script type="text/javascript" src="/recipe.js"></script>
+<script src="//code.jquery.com/jquery.min.js"></script>
 <style>
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: "Karma", sans-serif
@@ -28,9 +28,6 @@ nav::-webkit-scrollbar {
 	display: none;
 }
 
-/* #home {
-        font-weight: 800;
-    } */
 .w3-bar-block .w3-bar-item {
 	padding: 20px
 }
@@ -89,106 +86,126 @@ nav::-webkit-scrollbar {
 	transition-duration: 0.4s;
 }
 
-.more-button {
+.recipe_title {
+	font-size: 40px;
+	display: inline;
+}
+
+.bookmark_img {
 	float: right;
-	cursor: pointer;
-	vertical-align: middle;
 }
 
-.side-menu {
-	margin-top: 70px;
-	margin-left: 40px;
-	width: 200px;
-	height: 500px;
-	float: left;
+.recipe_title {
+	
 }
 
-.side-menu a {
-	background-color: #eee;
-	color: black;
-	display: block;
-	padding: 12px;
-	text-decoration: none;
+.recipe_photo {
+	display: inline;
+	width: 33%;
 }
 
-.side-menu a:hover {
-	background-color: #ccc;
+.recipe_fname {
+	font-size: 35px;
 }
 
-.side-menu a.active {
-	background-color: #000000;
-	color: white;
+.recipe_uname {
+	font-size: 20px;
 }
 
-.category {
-	margin-left: 40px;
-	margin-top: 150px;
-	font-size: 50px;
+tr #ingredients {
+	font-size: 25px;
 }
 
-.title {
+.recipe_ingredients {
+	margin-top: 10%;
+}
+
+td {
+	width: 0%;
+}
+
+.icons {
+	width: 100%;
 	margin-top: 10px;
-	font-size: 23px;
 }
 
-.sub_title {
-	margin-top: 5px;
-	font-size: 18px;
+.icons img {
+	width: 3%;
 }
 
-.foodname {
-	margin-top: 5px;
-	display: inline;
-	float: left;
+.recipe_contents {
+	margin: 60px 0 100px 0;
 }
 
-.cooking_time {
-	display: inline;
-	float: left;
-	margin-top: 5px;
-	margin-left: 5px;
+.contents {
+	font-size: 20px;
 }
 
-.username {
-	margin-top: 5px;
-	display: inline;
-	float: right;
+.recipe_comments {
+	margin-bottom: 300px;
 }
 
-@media screen and (max-width: 600px) {
-	.side-menu {
-		display: none;
+.comments_uname {
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.comments_contents {
+	font-size: 20px;
+}
+
+@media ( max-width :600px) {
+	.w3-container {
+		padding: 0;
 	}
-	.side-menu a {
-		background-color: #eee;
-		color: black;
-		display: block;
-		padding: 12px;
-		text-decoration: none;
+	.w3-top {
+		position: sticky;
 	}
-	.side-menu a:hover {
-		background-color: #ccc;
+	body {
+		padding: 0.01em 16px;
 	}
-	.side-menu a.active {
-		background-color: #000000;
-		color: white;
+	.recipe_title {
+		font-size: 35px;
+		width: 60%;
+		height: 30%;
 	}
-	.category {
-		margin-left: 30px;
-		margin-top: 70px;
-		font-size: 20px;
+	.bookmark_img img {
+		width: 50px;
+	}
+	.recipe_photo {
+		width: 100%;
+	}
+	.recipe_fname {
+		display: inline-block;
+		font-size: 25px;
+		margin-top: 10px;
+	}
+	.recipe_uname {
+		display: inline-block;
+		float: right;
+		font-size: 18px;
+		margin-top: 10px;
+	}
+	tr #ingredients, .ingredients-amount, .ingredients-name {
+		font-size: 18px;
+	}
+	.icons img {
+		width: 8%;
+	}
+	.contents {
+		font-size: 18px;
 	}
 }
 </style>
 </head>
-<body>
 
+<body>
 	<!-- Hamburger Menu -->
 	<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display: none; z-index: 2; width: 40%; min-width: 300px" id="mySidebar">
 		<!-- search -->
 		<div class="search-container">
-			<a href="javascript:void(0)" onclick="w3_close()"> <img id="close-icon" src="img/btn_back.png">
-			</a>
+			<a href="javascript:void(0)" onclick="w3_close()"><img id="close-icon" src="img/btn_back.png"></a>
 			<sapn>
 			<form action="/action_page.php">
 				<span id="search-icon">
@@ -199,7 +216,7 @@ nav::-webkit-scrollbar {
 			</sapn>
 		</div>
 		<!-- rice menu -->
-		<a href="#food" onclick="openMenu('rice-menu')" class="w3-bar-item w3-button">밥 요리</a>
+		<a href="/list.html" onclick="openMenu('rice-menu')" class="w3-bar-item w3-button">밥 요리</a>
 		<div id="rice-menu" class="w3-container w3-hide">
 			<a href="" class="hide-menu">볶음밥</a> <a href="" class="hide-menu">덮밥</a> <a href="" class="hide-menu">나물밥</a> <a href="" class="hide-menu">죽</a>
 		</div>
@@ -237,74 +254,75 @@ nav::-webkit-scrollbar {
 				<button id="hamburger-icon" onclick="w3_open()">☰</button>
 			</div>
 			<div class="w3-right w3-padding-16" style="margin-right: 10px;">
-				<a href="login">sign in</a>
+				<a href="/signin.html">sign in</a>
 			</div>
 			<div id="home" class="w3-center w3-padding-16">
-				<a href="/recipebook/main">Recipe Book</a>
+				<a href="/main1.html">Recipe Book</a>
 			</div>
 		</div>
 	</div>
 
-	<div class="category">밥 메뉴</div>
-
-	<!-- Side menu -->
-	<!--<nav class="side-menu">
-		<a href="#" class="active">밥 메뉴</a> <a href="#">볶음밥</a> <a href="#">덮밥</a>
-		<a href="#">나물밥</a> <a href="#">죽</a>
-	</nav> -->
-
-
 	<!-- !PAGE CONTENT! -->
-	<!-- <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px"> -->
 
+	<div class="w3-main w3-content w3-padding" style="max-width: 1200px; margin-top:60px">
+		<div style="">
+			<a href="/recipebook/modify?recipe_id=${read.recipe_id}">수정</a> | <a href ="/recipebook/delete?recipe_id=${read.recipe_id}">삭제</a>
+		</div>
+		<div>
+			<div class="recipe_title">${read.title}</div>
+			<div class="bookmark_img">
+				<img src="/img/bookmark.png" alt="북마크">
+			</div>
+		</div>
 
-
-	<div class="w3-main w3-content w3-padding" style="max-width: 1200px; margin-top: 100px">
-
-
-		<!-- First Photo Grid-->
-		<div class="w3-row-padding w3-padding-16 w3-center" id="food">
-			<c:forEach items="${list}" var="list">
-				<div class="w3-quarter" style="height: 400px">
-					<img class="thumbImg" src="/resources/img/1.jpg" alt="Sandwich" style="width: 100%">
-
-					<div class="title">
-						<a href="/recipebook/read?recipe_id=${list.recipe_id}">${list.title}</a>
-					</div>
-					<div class="sub_title">${list.sub_title}</div>
-					<div>
-						<div class="foodname">${list.food_name}</div>
-						<div class="cooking_time">${list.time}</div>
-						<div class="username">by ${list.username}</div>
-					</div>
+		<div class="w3-row" style="margin-top: 30px;">
+			<div class="w3-third recipe_photo">
+				<img src="/img/sweetpotato.jpg" style="width: 100%;">
+			</div>
+			<div class="w3-twothird w3-container">
+				<div class="recipe_fname">${read.sub_title}</div>
+				<div class="recipe_uname">by ${read.username}</div>
+				<div class="recipe_ingredients">
+					<table>
+						<tr>
+							<td id="ingredients">ingredients</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="ingredients_name">고구마</td>
+							<td class="ingredients_amount">1개</td>
+						</tr>
+					</table>
 				</div>
-			</c:forEach>
+			</div>
 		</div>
-	</div>
 
-	<!-- Pagination -->
-	<div class="pagination w3-center w3-padding-32">
-		<div class="w3-bar">
-
-			<a href="/recipebook/list?num=${startPageNum - 1}" class="w3-bar-item">«</a>
-
-			<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
-				<c:if test="${select != num}">
-					<a href="/recipebook/list?num=${num}" class="w3-bar-item w3-button w3-hover-black">${num}</a>
-				</c:if>
-				<c:if test="${select == num}">
-					<a href="/recipebook/list?num=${num}" class="w3-bar-item w3-black w3-button">${num}</a>
-				</c:if>
-			</c:forEach>
-
-
-			<c:if test="${next}">
-				<a href="/recipebook/list?num=${endPageNum + 1}" class="w3-bar-item">»</a>
-			</c:if>
+		<div class="icons">
+			<img src="/img/bookmark_checked.png" alt="">
+			288
+			<img src="/img/star.png" alt="">
+			150
+			<img src="/img/timer.png" alt="">${read.amount}인분
+			<img src="/img/timer.png" alt="">${read.time}분
 		</div>
-	</div>
+		<div class="recipe_contents">
+			<h1>Recipe</h1>
+			<div class="contents">
+				<p>${read.content}</p>
+			</div>
+		</div>
+		<hr>
+		<div class="recipe_comments">
+			<div>
+				<h1 style="display: inline;">comments &nbsp&nbsp&nbsp 1</h1>
+			</div>
+			<span class="comments_uname">yerin</span>
+			<span class="comments_contents">look so good!</span>
+		</div>
+		<input type="text" name="" id="">
+		<button>입력</button>
 
-	<hr id="about">
+	</div>
 
 	<!-- Footer -->
 	<footer class="w3-row-padding w3-padding-32">
@@ -345,8 +363,6 @@ nav::-webkit-scrollbar {
 		</div>
 	</footer>
 
-	<!-- End page content -->
-	</div>
 
 	<script>
 		// Script to open and close sidebar
@@ -360,4 +376,5 @@ nav::-webkit-scrollbar {
 	</script>
 
 </body>
+
 </html>
